@@ -1,0 +1,4 @@
+interface:
+  display_name: "Flutter Coding"
+  short_description: "Build structured Flutter projects and features"
+  default_prompt: "Use $flutter-coding to implement my Flutter task with the bundled project and feature architecture, shared components, and style tokens."

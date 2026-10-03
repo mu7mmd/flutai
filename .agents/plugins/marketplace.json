@@ -1,0 +1,15 @@
+{
+  "name": "flutai-marketplace",
+  "interface": {
+    "displayName": "FLUTAI Marketplace"
+  },
+  "plugins": [
+    {
+      "name": "flutai",
+      "source": {
+        "source": "local",
+        "path": "./"
+      }
+    }
+  ]
+}

@@ -25,7 +25,7 @@ The usual flow is screen/shared widget → provider/notifier action → feature 
 
 Move repeated visual behavior into the smallest shared widget and repeated non-visual work into its actual owner. Keep feature business decisions in the feature. Do not make a shared capture widget understand referral rewards, a media picker understand a profile update, or a generic pagination service understand survey eligibility.
 
-Use named constructors or a small variant API when they share one implementation. Keep the internal implementation private when it is not a consumer API. Preserve the target's direct relative imports, selective `show`/`hide`, purposeful re-exports, and existing barrel conventions; do not add a global export barrel or rewrite imports across unrelated files.
+Use named constructors or a small variant API when they share one implementation. Keep the internal implementation private when it is not a consumer API. Apply the [Dart import rules](coding-style.md#dart-imports) in new and touched files. Preserve purposeful re-exports and existing public barrel contracts; do not add a global export barrel or rewrite imports across unrelated files.
 
 ## Read the relevant detail
 

@@ -41,6 +41,7 @@ Follow the instruction hierarchy and current user request. Historical code is ev
 
 ## Owner's working rules
 
+- Follow the [Dart import rules](references/coding-style.md#dart-imports): direct Flutter/dependency imports, relative project imports ordered farthest to nearest, one blank line between groups, and purposeful `show`/`hide`.
 - Use the simplest sufficient implementation. Avoid speculative features, future-proof layers, new dependencies, extra state, wrappers, or defensive machinery without a concrete present need.
 - Apply DRY from the **second use**. Search for existing reusable code first. Share repeated behavior, validation, mapping, UI, configuration values, and calculations through the smallest suitable function, method, widget, service, model member, or constant. Update the relevant callers so later changes have one owner.
 - Within the same block, alias repeated access: `final locale = context.locale;` followed by `locale.hi` and `locale.you`. Apply this to other repeated stable expressions too. Keep the alias local to the scope where the value remains valid.

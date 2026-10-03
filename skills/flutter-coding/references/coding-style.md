@@ -1,5 +1,32 @@
 # The owner's coding style
 
+## Dart imports
+
+Apply these rules to new Dart files and imports in files touched by the task. Keep unrelated files and generated output out of an import cleanup.
+
+- Use direct `package:flutter/...` imports for Flutter SDK libraries and direct `package:<dependency>/...` imports for external dependencies. Import the library that owns the needed API; do not introduce a catch-all barrel just to shorten imports.
+- Use relative paths for the project's own files within the same source tree, including core and other features: `../../core/...`, `../repositories/x_repo.dart`, or `x_model.dart`. Do not use `package:<current_project>/...` or absolute filesystem paths for these imports. Derive each path from the importing file's directory, not from an assumed feature root.
+- Keep nonempty groups in this order, with exactly one blank line between them: Dart SDK (`dart:`), Flutter SDK (`package:flutter/...`), external packages, then project-relative imports. Omit empty groups. Keep an `as` prefix or conditional import attached to its directive.
+- Within the project-relative group, put the farthest paths first: sort by the number of leading `../` segments, descending. Put paths with no leading `../` after parent paths, and files in the current directory last. Use `x_file.dart`, not `./x_file.dart`, for those files. Do not insert blank lines between distance levels. Preserve existing order for equal-distance imports; use a consistent order for new ties. Do not let alphabetical sorting override the farthest-to-nearest order.
+- Prefer `show` when only one or two names, or a small clear set of names, are needed from a broad library. Keep an unrestricted import when many APIs are used and a long `show` list would reduce readability. Use `hide` when excluding a specific conflicting or unwanted name is clearer than listing everything needed. Apply this judgment to Flutter, dependency, and project imports. Include any extension names required for extension resolution, and keep intentional `as` prefixes for disambiguation. Remove unused or duplicate directives without dropping APIs the file uses.
+- Respect actual Dart package boundaries: external or separate workspace packages still use `package:`. Use the app's public `package:` API when importing it from outside its `lib` source tree, such as a test; do not traverse into another package with `../`. Preserve generated `part` directives and required conditional-import syntax.
+
+For example, keep Flutter, dependencies, and project files in separate groups, with the nearest project file at the bottom:
+
+```dart
+import 'package:flutter/material.dart';
+
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:firebase_core/firebase_core.dart' show Firebase;
+
+import '../../../../core/widgets/text/bayin_heading.dart';
+import '../../constants/auth_page.dart';
+import '../widgets/bayin_social_sign_in.dart';
+import 'x_file.dart';
+```
+
+Verify paths and selected names against the real source, then run focused analysis when available. Importing fewer names controls namespace visibility; do not claim `show` or `hide` alone reduces app size. If an existing lint or import organizer conflicts with this approved ordering, report the specific conflict rather than silently rewriting the rule or changing project/tooling configuration.
+
 ## Simple code with one owner for repeated behavior
 
 Implement only what the current requirement needs. Prefer direct methods, small widgets, and clear data flow over a generic framework. A short function is enough when a service adds no useful ownership or lifecycle. Reuse an existing service when the behavior already belongs there.

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.3
+
+- Require direct Flutter and external-package imports, and relative imports for project files within the same source tree.
+- Separate Dart SDK, Flutter SDK, dependencies, and project imports with one blank line between nonempty groups.
+- Order relative imports from farthest to nearest, with current-directory files last.
+- Use purposeful `show`/`hide` selections while preserving required APIs, extensions, prefixes, generated directives, and package boundaries.
+- Apply the import rules to new/touched code and import reviews without unrelated cleanup or silent tooling changes.
+
 ## 0.4.2
 
 - Set Mohammad Alamoudi as the developer and add the owner's LinkedIn profile to author metadata.

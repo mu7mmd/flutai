@@ -1,27 +1,31 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "flutai",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Create and evolve Flutter apps with the owner's layered features, organized core, reusable components, and named design tokens.",
   "author": {
-    "name": "Plugin owner"
+    "name": "Mohammad Alamoudi",
+    "url": "https://www.linkedin.com/in/mhmd-amoudi"
   },
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "FLUTAI",
+        "displayName": "FlutAI",
         "shortDescription": "Your Flutter coding workflow",
         "longDescription": "Create, redesign, implement, debug, and review Flutter/Dart apps using the bundled Bayin/Jawwab architecture. Follow project and feature blueprints with presentation/screens, presentation/widgets, data/models, data/repositories, and provider ownership. Organize core widgets by family with separate files, centralize config, services, helpers, routes, localization, fonts, sizes, styles, and complete theme palettes. Prefer composition and concrete variants over repeated mode conditions, preserve const, reuse from the second use, and verify structure and behavior. Requires a coding environment with project and tool access.",
-        "developerName": "Plugin owner",
+        "developerName": "Mohammad Alamoudi",
         "category": "Productivity",
         "defaultPrompt": [
-          "Create or extend a Flutter project using the bundled FLUTAI project and feature blueprints.",
+          "Create or extend a Flutter project using the bundled FlutAI project and feature blueprints.",
           "Debug this Flutter issue and make a focused fix using the project's conventions.",
           "Review my Flutter changes for concrete bugs and missing validation."
         ],
         "logo": "./assets/flutter-logo.png",
-        "composerIcon": "./assets/flutter-logo.png"
+        "composerIcon": "./assets/flutter-logo.png",
+        "websiteURL": "https://github.com/mu7mmd/flutai"
       }
     }
-  }
+  },
+  "homepage": "https://github.com/mu7mmd/flutai",
+  "repository": "https://github.com/mu7mmd/flutai"
 }

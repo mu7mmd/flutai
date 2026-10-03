@@ -1,8 +1,8 @@
-# FLUTAI
+# FlutAI
 
 Flutter/Dart coding workflows for creating, extending, debugging and reviewing apps with layered features, reusable components and named design tokens.
 
-Version: 0.4.1. A coding environment with project and tool access is required.
+Version: 0.4.2. A coding environment with project and tool access is required.
 
 ## Install with Codex CLI
 
@@ -25,7 +25,7 @@ A workspace admin can import the marketplace:
 
 New marketplaces enable daily automatic sync. Use **Admin > Plugins > Marketplaces > Sync now** to request an earlier refresh. Sync uses the importing admin's GitHub connection.
 
-This import flow applies to managed workspaces with admin access. It does not establish automatic GitHub sync for personal ChatGPT accounts. Publishing on GitHub does not publish FLUTAI in the public ChatGPT Plugins Directory.
+This import flow applies to managed workspaces with admin access. It does not establish automatic GitHub sync for personal ChatGPT accounts. Publishing on GitHub does not publish FlutAI in the public ChatGPT Plugins Directory.
 
 ## Update a Codex installation
 
@@ -56,7 +56,7 @@ Maintainer workflow: prepare and verify changes, present the version and change 
 
 ## Source and branding
 
-No license has been selected. FLUTAI is an independent project; the included Flutter logo does not imply endorsement.
+No license has been selected. FlutAI is an independent project; the included Flutter logo does not imply endorsement.
 
 ## Official documentation
 

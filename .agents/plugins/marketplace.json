@@ -1,7 +1,7 @@
 {
   "name": "flutai-marketplace",
   "interface": {
-    "displayName": "FLUTAI Marketplace"
+    "displayName": "FlutAI Marketplace"
   },
   "plugins": [
     {

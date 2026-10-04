@@ -20,6 +20,8 @@ Use the target's Riverpod annotations, provider families, and established `Futur
 
 `ref.watch` observes values needed for rendering/derived state; `ref.read` is appropriate for an action or a deliberate snapshot; `ref.listen` handles the existing side-effect flow. Preserve family arguments, scope ownership, keep-alive behavior, and disposal. A cached notifier or family instance is not automatically shared with every caller.
 
+Extract substantial listener registration/transition blocks into private helpers below the owning widget's `build`, and call registration helpers synchronously from `build`. Keep `WidgetRef.listen` in that build lifecycle; use a version-supported manual listener API only when genuinely registering outside it. Put flow-specific listeners in their specialized screen, with shared layouts receiving values/widgets/callbacks instead of choosing listener behavior by mode. Keep controller hooks in the owning screen's unconditional build flow and avoid duplicate subscriptions. Follow [private helper rules](coding-style.md#keep-build-focused-with-private-helpers).
+
 When the app uses `ApiRequestNotifier.guard` and app-level listeners for request loading/error/success UI, reuse that flow. Keep completion sequencing and callbacks intact. Jawwab's bank-account provider demonstrates separate add/update/delete methods delegating repeated coordination to `_bankAccountRequest`, with operation-specific success actions.
 
 ## Pagination, loading, and validation

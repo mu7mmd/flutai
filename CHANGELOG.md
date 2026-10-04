@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.4.4
+
+- Require Design Linking: inspect/reuse existing UI, preserve shared design defaults and tokens across screens, and link dialog/sheet layout, action styling, spacing, icon treatment, and transitions through their common owners.
+- Require selective source comments for non-obvious code/rationale and project-root documentation/ for implementation, requirements, configuration, settings, and versions, split into useful topic files and maintained with code changes.
+- Prefer Dart dot shorthands for all supported enum, constructor, and static-member uses in new/touched Flutter, dependency, and project code, respecting language version, context typing, constants, and generics.
+- Name and apply the owner's Extend Over Conditions (EOC) principle across widgets, callbacks, listeners, argument expressions, and texts, including reuse of layered X/Y/Z specializations through parameters.
+- Extract substantial build-time listeners, handlers, and calculations into named private helpers while preserving hooks, reactive inputs, and listener registration lifecycle.
+- Separate screens and widgets with distinct behavior, composing common layouts through explicit titles, labels, callbacks, and complete widget slots.
+- Keep controllers, forms, submit actions, and listeners with their specialized caller; share repeated behavior through its existing owner.
+- Reject repeated mode branches hidden in helper methods while retaining necessary runtime-state and lifecycle checks.
+- Apply these rules across Flutter code generation and review, including login, registration, and OTP flows.
+
 ## 0.4.3
 
 - Require direct Flutter and external-package imports, and relative imports for project files within the same source tree.

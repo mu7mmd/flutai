@@ -179,8 +179,10 @@ Before saying a project/redesign is finished:
 - Trace at least one actual user flow through navigation, screen composition, provider, repository, and shared infrastructure. For a UI-only scope, verify honest disabled/unavailable behavior instead of claiming a connected service.
 - Confirm no feature-root screen files, no combined shared-widget implementation, no screen-owned API/storage configuration, and no handwritten generated outputs.
 - Confirm styles/fonts/sizes/assets are consumed from their owners. Check light/dark and locale/font changes when supported, as well as directional layout, long text, and narrow layouts in affected UI.
+- Check [Design Linking](design-tokens.md#design-linking): repeated components and overlays share their implementation and design defaults; new components match established tokens, layout rhythm, icon treatment, states, and transitions. Compare representative usages and verify rendered consistency when available.
 - Verify router arguments, back/pop results, signed-in/out destinations, and direct detail links where applicable. Do not infer runtime protection from an initial route alone.
 - Run formatting, focused analysis, required generation, and meaningful existing behavior checks. Run the structure checker below; review its warnings and its untested boundaries.
+- Maintain project-root `documentation/` for implemented architecture/features, requirements, configuration/settings, and actual version constraints. Split independent topics, verify explanations against source, and keep comments selective. Follow [documentation.md](documentation.md).
 - Report implemented/reused modules, concrete validation results, and remaining integration/device limitations. A successful screenshot or bundle build does not prove architecture, and directory presence does not prove the implementation works.
 
 ## Structure checker

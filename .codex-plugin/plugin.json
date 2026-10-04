@@ -1,6 +1,6 @@
 {
   "name": "flutai",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Create and evolve Flutter apps with the owner's layered features, organized core, reusable components, and named design tokens.",
   "author": {
     "name": "Mohammad Alamoudi",

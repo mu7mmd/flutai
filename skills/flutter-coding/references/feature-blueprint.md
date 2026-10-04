@@ -84,8 +84,10 @@ For a same-project redesign, reuse existing typed data and state with explicit p
 1. Inspect actual paths and imports: data/state/presentation ownership, separate public UI files, appropriate core reuse, and no accidental cross-feature internals.
 2. Trace a real success and failure from a user action to the owner and back; verify the applicable loading/empty/retry states, validation, refresh, and nullable-update semantics.
 3. Check route input/result types, direct navigation, back behavior, strings/locales, and token use.
+   Apply [Design Linking](design-tokens.md#design-linking): inspect and reuse matching components, keep dialog/sheet presentation linked, and compare new UI with established spacing, geometry, colors, typography, icons, and transitions.
 4. Run the bundled structure checker with `--feature <name>`; use `--requires-data` for a data-backed feature, and explicit `--shared-root` if owners are reused in an alternate tree. Review any generic pagination exception manually and report its real owner, not a dummy repository.
 5. Format/analyze the changed slice and run meaningful behavior checks. Verify generated imports resolve. Report exactly what was validated.
+6. Update project-root `documentation/` to explain the implemented feature/flow and affected requirements, configuration, settings, and versions. Use selective comments for non-obvious local logic or rationale. Follow [documentation.md](documentation.md).
 
 ## Observed source examples
 

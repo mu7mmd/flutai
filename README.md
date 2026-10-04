@@ -2,7 +2,7 @@
 
 Flutter/Dart coding workflows for creating, extending, debugging and reviewing apps with layered features, reusable components and named design tokens.
 
-Version: 0.4.3. A coding environment with project and tool access is required.
+Version: 0.4.4. A coding environment with project and tool access is required.
 
 ## Install with Codex CLI
 

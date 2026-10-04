@@ -32,6 +32,8 @@ Both apps use an Envied-backed `AppConfig`, with different fields and locations.
 
 ## Initialization and app composition
 
+Document implemented configuration, environments, generation/setup requirements, settings, and affected version constraints in the relevant project-root `documentation/` files. Explain actual owners, keys/defaults, and commands; keep essential non-obvious rationale near its code. Follow [documentation.md](documentation.md) and update the explanations with configuration changes.
+
 `main.dart` owns required initialization order and provider overrides for initialized dependencies such as preferences/storage. `app.dart` composes `MaterialApp.router`, the router provider, locale/delegates/supported locales, the theme, and app-level response listeners. Reuse those owners when adding a dependency or app-wide preference; do not initialize integrations in each feature's build method.
 
 Keep global request/error listeners attached to their intended provider scope. Preserve the app's existing authentication, socket, messaging, and deep-link lifecycle when touching initialization. Await only what later steps depend on, following the async contract guidance in [coding-style.md](coding-style.md). SDK or native configuration changes remain subject to the main skill's concrete approval boundary.

@@ -16,6 +16,7 @@ Use this reference when choosing where new code belongs or connecting several la
 | Shared infrastructure | Existing `core/api`, `core/pagination`, `core/routes`, `core/socket`, and `core/firebase` modules own their corresponding infrastructure. Bayin keeps some providers in `core/controllers`. |
 | Shared modules with their own flow | Jawwab's `core/kernel` contains modules such as location, agreement, and app tour, each with only the data/state/presentation parts it needs. Use this pattern for a real cross-feature module, not every helper. |
 | Configuration and localization | Existing `config/app_config.dart` or `core/config/app_config.dart`; `assets/l10n/*.arb`, `l10n.yaml`, and generated localization output. |
+| Developer documentation | Project-root `documentation/`, with topic/feature files explaining implementation, requirements, configuration, settings, and actual version constraints. See [documentation.md](documentation.md). |
 
 Scope controls which capabilities are implemented, not whether their files are correctly organized. A complete new app needs the connected foundation in the project blueprint. A data-backed feature needs its model, repository, state, screen, and widget ownership. A static screen does not need a fake repository, and an existing reused repository does not need an empty duplicate. Do not scaffold empty layers, copy every SDK from the reference apps, or migrate unrelated existing code. An additional domain/use-case/interface layer is not a default part of this baseline.
 
@@ -37,6 +38,7 @@ Use named constructors or a small variant API when they share one implementation
 - New feature placement and implementation: [feature-blueprint.md](feature-blueprint.md).
 - Detailed core owners and reusable families: [core-catalog.md](core-catalog.md).
 - Router contracts and lifecycle: [routing.md](routing.md).
+- Project documentation and selective comments: [documentation.md](documentation.md).
 
 ## Evidence and limits
 

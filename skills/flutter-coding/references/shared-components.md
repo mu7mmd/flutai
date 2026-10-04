@@ -8,6 +8,10 @@ For new code, the file layout is part of the contract: `core/widgets/buttons/app
 
 Build screens from project controls. Keep their colors, typography, disabled/loading states, shape, padding, and repeated interaction behavior in the shared implementation. A screen supplies its labels, data, callbacks, and genuine visual differences.
 
+Follow strict [Design Linking](design-tokens.md#design-linking): search the actual component and representative callers before adding UI; reuse matching defaults or extend their owner for a real variant. Match established spacing, padding, shape/borders, colors, typography, size, icon treatment, and animation when creating a missing component. Keep common dialogs and sheets linked through shared presentation shells and launch helpers, including title placement, action-button design/layout, insets, and transitions. Optional parameters must preserve the overall system rather than introduce arbitrary local drift.
+
+Apply **Extend Over Conditions (EOC)**: separate callers with distinct behavior and compose them through a shared parameterized layout. A common scaffold/form/card receives its title, subtitle, action label, callback, and complete content/footer slots as needed; each specialized screen/widget owns its controllers, submit action, and private listener helpers. Reuse recurring specializations too: `YWidget` configures `XWidget`, and `ZWidget` may configure `YWidget` when it reuses that same design/behavior. Pass the remaining differences through parameters at each layer. Do not make the base repeatedly branch on login/register/verify or analogous modes. See [EOC rules](coding-style.md#separate-variants-before-adding-conditions) and [private helpers](coding-style.md#keep-build-focused-with-private-helpers) before implementing these variants.
+
 | Need | Observed reusable owner |
 | --- | --- |
 | Buttons | Bayin `CustomElevatedButton`, `StateElevatedButton`, and outlined/text variants; Jawwab `JawwabButton`, `JawwabStateButton`, `CustomOutlinedButton`, and `CustomIconButton`. Named forms such as `.small`, `.custom`, and `.text` share their underlying implementation. |

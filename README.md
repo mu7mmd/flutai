@@ -44,7 +44,7 @@ Keep `plugin.json` and `.codex-plugin/plugin.json` at the same semantic version.
 
 Publishing a GitHub Release is separate from committing a version change and separate from marketplace sync. Users can choose **Watch > Custom > Releases** on GitHub for release notifications. These are GitHub notifications, not guaranteed in-app update prompts.
 
-Maintainer workflow: prepare and verify changes, present the version and change summary for owner approval, then publish only after approval. Create a tag and Release for approved release publication.
+Maintainer workflow: prepare and verify changes, then present the version and change summary for owner approval. The owner's initial approval to upload or publish a prepared FlutAI update covers the source commit/push, its matching version tag, and publication of the GitHub Release; do not request a second release confirmation for the same approved update. Honor an explicit request to save source only, keep a draft, or defer publication. Verify the published commit, tag, and Release separately from marketplace/client refresh.
 
 ## Repository layout
 

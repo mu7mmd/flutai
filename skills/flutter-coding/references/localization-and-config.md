@@ -16,6 +16,12 @@ Locale preferences are owned by the existing user-preferences provider and `Stor
 
 Audit all supported catalogs and the complete language-picker list when adding copy. Keep directional arrows in a shared helper and verify their actual glyphs; retain intentionally LTR identifiers. See [design-fidelity.md](design-fidelity.md#geometry-surfaces-and-icons) for icon and brand-asset rules. A source rename must not change translated branding or persisted/API values.
 
+## Copy must describe the actual interaction and state
+
+A debounced search hint asks the user to search, not to press Enter/Search when no press is required. Audit all callers and supported locales of that search family, including drawers and pickers. Preserve optional keyboard-submit behavior and avoid duplicate requests; correcting a misleading hint is not permission to remove working submit/clear handling or alter debounce timing.
+
+Titles and labels must identify the actual mode and avoid unsupported status claims. If the requested label is “Project context”, do not retain “Project context is ready” in other locales or present readiness without state evidence. Preserve localization keys when only wording changes, regenerate through the configured source catalogs, and verify fallback languages too. The exact project label is a scoped example; the transferable rule is semantic fidelity across translations.
+
 ## Constants, assets, and config
 
 Keep stable shared values in their specific owner, not a generic catch-all file:

@@ -37,6 +37,14 @@ Read complete light/dark palettes at their owner. Selected tabs, outlines, text,
 
 Prefer the requested Iconsax family; verify the rendered glyph in the installed package because names can mislead. For outlined controls use the correct outlined variant (often `_copy`) and equal visual sizes, not just equal font boxes. The owner verified these candidates: right arrow `arrow_right_1_copy`, right chevron `arrow_right_3_copy`, left arrow `arrow_left_copy`, left chevron `arrow_left_2_copy`, outlined microphone `microphone_copy`. Verify availability and appearance against the installed version; avoid assuming `arrow_right_1` has the desired shape. Reuse a directional icon/widget for navigation arrows and directional padding/alignment. Do not mirror nondirectional brand or media glyphs.
 
+## Icon foreground and outline semantics
+
+For enabled icon buttons in the owner's UI, the default foreground is the resolved main light/dark foreground (the black/white role), not the muted/disabled gray role. Put the default in the theme/shared button owner so composer, drawer-add, and other equivalent actions inherit it. Keep explicit semantic accent/destructive colors and disabled states distinct.
+
+When an outlined icon action has an explicit semantic foreground, its outline follows that foreground. When it uses the normal main foreground, keep the established neutral outline instead of turning the outline solid black/white. This refines the existing fill-contrast rule: it does not add a border to a contrasting filled accent, delete outlines from neutral surfaces, or tint every unrelated text/filled button. Resolve icon and border from the same active semantic role, preserving supported explicit variants and state changes. Verify normal/accent/destructive/disabled controls in both palettes.
+
+Collection titles name the actual collection or mode, and pinned header/search geometry must be shared with equivalent screens. If a collection requests a pinned title and search, both remain stationary while items scroll beneath the search viewport; do not pin only the app bar while a secondary heading/search scrolls away.
+
 ## Content and stable layouts
 
 Keep text localized in every supported catalog, including new subtitles, actions, tooltips, and brand names. Verify all languages appear in language selection, translated placeholders retain their contracts, and no accidental literal `\n` or forced line break controls a responsive greeting. A brand's translation policy belongs to its app, not a language ternary scattered through widgets.

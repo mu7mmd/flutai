@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.6.0
+
+- Preserve focused editing connections through inline recording and recording actions without changing modal focus rules.
+- Define themed active icon defaults and foreground-matched semantic outlines, retaining neutral outlines and filled-accent exceptions.
+- Clarify that loading-item sheets fill the entire available height to the top safe area in loading/data/empty/error states, superseding partial-height interpretations.
+- Require swipeable tab views with one fractional indicator/page animation and guarded route synchronization.
+- Audit idle/busy dismissal at every launcher and ensure cancel pops exactly once.
+- Preserve requested read-only state and menu parity between collections and details without universalizing app-specific archive policies.
+- Align localized titles/search hints with actual state and debounce behavior.
+- Synchronize blur/tint with route motion, dragging, cancellation, and reverse transitions.
+- Retain a detailed C01–C14 requirement review and acceptance matrix, preserving historical rules and explicit exceptions.
+
 ## 0.5.0
 
 - Turn the owner's full redesign feedback into required, linked references for design fidelity, scrolling/overlays, and interaction lifecycle.

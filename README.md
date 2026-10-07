@@ -2,7 +2,7 @@
 
 Flutter/Dart coding workflows for creating, extending, debugging and reviewing apps with layered features, reusable components and named design tokens.
 
-Version: 0.5.0. A coding environment with project and tool access is required.
+Version: 0.6.0. A coding environment with project and tool access is required.
 
 ## Install with Codex CLI
 
@@ -45,6 +45,10 @@ Keep `plugin.json` and `.codex-plugin/plugin.json` at the same semantic version.
 Publishing a GitHub Release is separate from committing a version change and separate from marketplace sync. Users can choose **Watch > Custom > Releases** on GitHub for release notifications. These are GitHub notifications, not guaranteed in-app update prompts.
 
 Maintainer workflow: prepare and verify changes, then present the version and change summary for owner approval. The owner's initial approval to upload or publish a prepared FlutAI update covers the source commit/push, its matching version tag, and publication of the GitHub Release; do not request a second release confirmation for the same approved update. Honor an explicit request to save source only, keep a draft, or defer publication. Verify the published commit, tag, and Release separately from marketplace/client refresh.
+
+## Owner rules in 0.6.0
+
+Inline recording preserves editor focus; enabled icons and semantic outlines share theme roles. Loading-item sheets fill the full available height through every data state. Tabs track fractional swipe progress, optional sheet dismissal follows the live operation state, archived/read-only entry points share action contracts, localized copy reflects real behavior, and backdrop effects follow the same route/drag progress as the surface. See the [detailed follow-up review](documentation/interaction-refinement-review.md) for every request, its scope, superseded interpretations, acceptance scenarios, and publication evidence boundaries.
 
 ## Owner rules in 0.5.0
 

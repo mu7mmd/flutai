@@ -20,6 +20,14 @@ Treat keyboard visibility, focus, and opening/closing direction separately. Syst
 
 Prompts use the real cached API data. When requested, show at most two horizontal rows with the keyboard closed and one row while opening/open. Horizontal scroll padding belongs inside the content. Preserve typing and prompt selection. Keep the field/actions gap token shared, and check composer translucency/halo in dark mode as well as light.
 
+## Inline recording preserves the editing focus contract
+
+Starting recording inside a focused composer must keep the keyboard open, and inline recording actions must not dismiss it. Apply this to mic tap/hold, pause/resume, stop/preview, conversion, and cancel/delete when those actions remain within the composer. Do not call the global unfocus helper simply because recording starts. Do not request focus when the keyboard was initially closed; preserve the user's starting state.
+
+Trace both event handlers and widget lifecycle: replacing the focused text editor with a recorder disposes its editing connection even if no unfocus call remains. Keep that editor/controller/focus node alive through recording (for example offstage when appropriate), without showing duplicate fields or changing the draft identity. Include inline action hit regions in the editor's tap region so the outside-tap handler does not treat them as external interaction.
+
+This is distinct from opening a genuine modal, navigating away, an explicit send policy, or a system microphone-permission dialog. Preserve the existing modal hide/restore contract and native permission semantics rather than forcing keyboard visibility across unrelated routes. Check focus while the action happens, not merely after reopening the editor. Test with an injectable recorder/service seam so native resources from one test cannot stall the next recording session.
+
 ## Authentication and session ownership
 
 Differentiate an explicit login/register CTA from a protected-feature invitation. Direct login/profile entry takes the user directly to login; a protected feature can show the shared optional invitation sheet with login and create-account actions. Guest affordances requested by the owner remain actionable so they can explain the benefit, rather than becoming unexplained disabled controls. Include drawer, projects, new-chat More, and profile entry points in the caller audit.
@@ -39,6 +47,14 @@ Correct recorder lifecycle before polishing it. Model the reachable states clear
 When requested, the lower stop/transcribe action stops recording and converts to editable text WITHOUT sending a message. Show conversion loading on that action. The upper playback control becomes play and the recording remains available until conversion completes. Explicit send is separate. Cancel followed immediately by record must await/serialize actual recorder stop/dispose where required, clear only its own state, and ignore obsolete callbacks. Avoid disposing native audio resources while a new operation still uses them; check mounted/liveness after awaits. Preserve recoverable text/audio on failure where appropriate.
 
 Use the existing recording/transcription/playback services and shared icon/button states. Native recording, permissions, interruptions, and performance require real-device evidence; widget tests can verify callbacks/state races but not certify native audio behavior. Existing message playback may receive a translucent visual update without rewriting working playback logic.
+
+## Read-only state and menu parity across entry points
+
+A restricted mode must travel with the entity from collection entry into its detail state, survive relevant refreshes/rebuilds, and be updated when a mutation changes that mode. Do not infer it only from the collection title, a one-time widget flag that is lost on navigation, or a locally styled disabled button. Use the app's authoritative model/provider where available and preserve ID-only link loading; do not invent a backend status field.
+
+Where the requested archive contract is read-only, hide the entire composer/input card, including attachments, microphone, send, and auxiliary input controls, and guard the send event boundary too. Re-entering, restoring, or archiving an already-open entity must produce the right controls; deleting the open entity must not leave an actionable deleted detail. Refresh affected collections without overwriting another collection's query state.
+
+Use one action definition/behavior owner for the same entity mode in a row, drawer, and detail More menu. Keep icons, labels, ordering, destructive foreground, permissions, confirmations, and side effects consistent. Different roles still receive their valid action subset. A read-only archive policy belongs to the requesting app: some products legitimately allow editing archived items, so do not export Bayin's business policy as a universal meaning of “archive”.
 
 ## Conditional features and verification
 

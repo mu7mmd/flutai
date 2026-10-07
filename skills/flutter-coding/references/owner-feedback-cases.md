@@ -79,3 +79,32 @@ M01–M31 identify the original owner-message records reviewed, including amende
 Build a requirement ledger for a broad task: original request, latest effective decision, affected callers, shared owner, data/action contract, and validation evidence. Read originals when the owner requests a complete review; do not claim an automatic context compaction was disabled or treat a compressed recap as a verbatim transcript. If history is unavailable, disclose the boundary. Do not infer approval from silence, a passing analyzer, or a commit carrying the owner's name. Preserve local edits, and do not generalize a temporary environment override into a config convention.
 
 The owner's intent is consistent: exact reference fidelity, shared ownership from the second use, preserved integrations, precise interaction timing, and evidence that matches the claim. Keep implementation choices simple while covering the actual states and exceptions; neither shorter code nor a visually plausible screenshot excuses altered behavior.
+
+## October 7 follow-up C01–C14
+
+This follow-up is a separate review of the current conversation, not a renumbering or replacement of M01–M31. Its detailed section mapping, rationale, implementation evidence, and checks are retained in the [follow-up review](../../../documentation/interaction-refinement-review.md). The source is the owner's multi-part request, the later full-height correction, and the explicit instruction to study and publish the reusable lessons. Agent implementation choices are evidence, not additional owner requirements.
+
+| ID | Owner's effective requirement | General rule and boundary |
+| --- | --- | --- |
+| C01 | Mic recording and its inline actions keep an already-open keyboard. | Preserve the live editor connection and tap region; remove recording-specific unfocus. Do not force focus if initially absent or extend this to unrelated modals. |
+| C02 | Colored outlined icon borders follow foreground; ordinary icon borders stay default. | Resolve semantic foreground and outline together; normal foreground retains the neutral border. Contrasting filled controls remain borderless. |
+| C03 | Loading-item sheets keep height across loading/data/error; correction: full sheet height to the top. | Full available safe-area/keyboard-adjusted viewport in loading/data/empty/error, not 85%, 75%, or a 40%-screen inner list. Static short sheets retain content sizing. |
+| C04 | Tab indicator follows scrolling, like Flutter defaults; tab views accept hand switching. | One fractional controller for indicator/page; tap and swipe coverage across actual views, including RTL and route synchronization. Form choices and route actions are classified by behavior, not their visual shape alone. |
+| C05 | Idle project/chat rename sheets actually close by X/outside/drag; audit others. | Inspect launchers and shared guards; distinguish optional idle from busy and genuinely required. Cancel has one pop owner. |
+| C06 | Active default icons are themed black/white instead of gray. | Use the main foreground at the theme/shared-control boundary; preserve disabled and explicit semantic colors. |
+| C07 | Archive title says archived chats; title/search stay pinned, chats scroll beneath. | Collection identity belongs in all visible headers; pin the requested full header/search region, not only the app bar. |
+| C08 | Opening an archived chat hides the entire input card and prevents sending. | Carry the requested mode into detail state and refresh; hide all compose affordances and guard dispatch. Archive read-only is this app's policy, not a universal product rule. |
+| C09 | Archived detail More matches row actions, with icons and destructive delete color. | One mode/permission-aware action owner across surfaces; preserve real restore/delete callbacks and confirmations. |
+| C10 | Change “سياق المشروع جاهز” to “سياق المشروع”, including translations. | Neutral concept labels must not assert readiness without authority; change all supported catalogs through generation. Do not copy the specific label into unrelated apps. |
+| C11 | Remove press-search instructions from all debounced search hints. | Copy reflects automatic debounce; optional submit/clear semantics stay intact and must not duplicate requests. |
+| C12 | Dialog background filtering starts and advances with the dialog, not after it. | One presentation progress source drives visible content, blur strength, and tint; avoid an independently delayed filter. |
+| C13 | Sheet background changes with motion, including dragging by hand. | Combine route progress and live displacement; cancellation restores both together and dismissal continues down. Verify intermediate frames, not only final screenshots. |
+| C14 | Study the conversation deeply, preserve detail, integrate general rules, bump and publish immediately. | Keep traceable requirements and corrections in maintained references and release review; preserve previous rules, metadata, scope, and validation boundaries. Publication permission is already explicit for this version. |
+
+### Explicit precedence and non-generalizations
+
+C03 overrides the partial-height implementation attempted during the conversation and narrows the old blanket content-sized-sheet wording for loading-item sheets. A surface whose inner list has a constant height but whose outer extent changes does not meet it. Top safe area and keyboard constraints still belong to one layout owner; the request is not to draw interactive content under unsafe system chrome.
+
+C01 supplements the earlier composer-overlay rule: inline recording keeps focus; actual media/mode/credits sheets keep their existing hide/restore lifecycle. C04 adds finger switching and continuous tab progress without automatically cancelling the prior scoped immediate main-navigation tap behavior. C02 refines the conditional border rule rather than replacing it with “all colored controls have borders”.
+
+The previous pass's 85%/75%/40% choices, a specific recorder factory signature, widget names, exact animation curve/duration, API identifiers, and particular example test counts are not general design mandates. The global lesson is to preserve the user's concrete geometry/timing/permission semantics through the actual shared owners. Do not learn an incorrect intermediate implementation as the desired rule.

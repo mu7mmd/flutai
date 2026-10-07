@@ -38,6 +38,8 @@ Read [routing.md](routing.md) for route files, provider ownership, paths, parame
 
 Edit source declarations, not `.g.dart` or generated localization implementations. Run the target's existing generator only when its source changes require it, with its installed dependency versions. Keep the generated diff scoped to the work; do not migrate Riverpod or routing APIs to match another project's snapshot.
 
+For independent search contexts, stale-response guards, reactive session cleanup, authenticated-401 sequencing, keyboard timing, and recording lifecycles, read [interaction-lifecycle.md](interaction-lifecycle.md). Do not confuse shared presentation with global mutable feature state.
+
 ## Source anchors
 
 Inspected on 2026-10-03: both response models, request providers, pagination providers/models, and provider builders; Bayin `features/notifications/data/repositories/notifications_repo.dart`; Jawwab `features/wallet/data/repositories/wallet_repo.dart`, `providers/manage_bank_account_provider.dart`, `data/models/bank_account_model.dart`, `features/community/providers/posts_provider.dart`, and the generic pagination/selection APIs. API, routing, socket, and Firebase module entry points/signatures were inspected for ownership; this reference does not certify those implementations as defect-free.

@@ -55,6 +55,8 @@ Deep-link services parse incoming data in their owner and hand off to the router
 
 App-level request/response listeners belong in app composition or a focused listener owner under that same scope. They should not be registered separately by each screen or recreated by nested app shells. Keep business reactions and error feedback sequencing intact.
 
+For root/main versus inner-screen navigation, same-kind detail replacement, passed-title reconciliation, and draft isolation, also read [interaction-lifecycle.md](interaction-lifecycle.md#state-identity-is-not-visual-identity). Use current user navigation semantics over older examples.
+
 ## Verification
 
 For the affected routes, check direct entry, required/missing arguments, logged-in/out behavior, unknown routes, back/pop results, shell selection, and the intended state lifetime. Test route changes with the target's existing test setup; no need for a live backend when provider overrides can exercise the route contract. Disclose separately when platform deep-link delivery is untested.

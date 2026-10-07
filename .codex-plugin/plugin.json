@@ -1,6 +1,6 @@
 {
   "name": "flutai",
-  "version": "0.4.4",
+  "version": "0.5.0",
   "description": "Create and evolve Flutter apps with the owner's layered features, organized core, reusable components, and named design tokens.",
   "author": {
     "name": "Mohammad Alamoudi",
@@ -20,6 +20,7 @@
     ],
     "logo": "./assets/flutter-logo.png",
     "composerIcon": "./assets/flutter-logo.png",
-    "websiteURL": "https://github.com/mu7mmd/flutai"
+    "websiteURL": "https://github.com/mu7mmd/flutai",
+    "capabilities": []
   }
 }

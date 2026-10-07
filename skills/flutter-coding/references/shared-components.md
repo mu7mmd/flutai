@@ -49,6 +49,8 @@ Keep generic machinery generic. In Jawwab, `WidgetToImage` owns capture mechanic
 
 Choose local hooks/stateful widget state for UI-owned controllers, focus, expansion, and animation according to the existing pattern. Put shared/reactive business state in its provider. Respect who creates, listens to, updates, and disposes each controller; do not create a controller in every build or dispose one supplied by the caller.
 
+For required same-role reuse (search, headers, drawer rows, action controls, choices, feedback, and loading frames), follow [design-fidelity.md](design-fidelity.md#one-owner-for-each-repeated-role). Shared UI does not imply shared provider/controller identity; follow [interaction-lifecycle.md](interaction-lifecycle.md#state-identity-is-not-visual-identity). Read [scroll-and-overlays.md](scroll-and-overlays.md) before changing shared overlay or inset owners.
+
 ## Helpers, extensions, and utility classes
 
 Keep small transformations small. Both apps use functions such as `fromMapOrNull`, `modelListFromMap`, `primaryUnfocus`, `futureDelay`, and `exceptionHandler`. Jawwab adds reusable equality/hash, date/count/price formatting, and UUID helpers. Reuse the relevant function instead of repeating parsing, mapping, formatting, or focus setup inside widgets and repositories.

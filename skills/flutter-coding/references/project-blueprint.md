@@ -171,6 +171,8 @@ Separate ownership of navigation state, shell UI, and auth guards. Do not create
 
 For unavailable backend capabilities, keep typed local form state and organized presentation. Do not fabricate endpoint URLs, record lists, saves, balances, or successful network operations. Implement the data layer when its actual contract is available; report the missing contract precisely.
 
+For an explicitly requested alternate-tree promotion, follow [source-tree promotion and naming](design-fidelity.md#source-tree-promotion-and-naming): preserve a recoverable baseline, consolidate actual owners, update source/test/generator/entry-point paths, and verify the canonical build. Never rename persisted/backend contracts with a blanket text replacement.
+
 ## Completion checks
 
 Before saying a project/redesign is finished:

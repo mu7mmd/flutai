@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.5.0
+
+- Turn the owner's full redesign feedback into required, linked references for design fidelity, scrolling/overlays, and interaction lifecycle.
+- Preserve final corrections and exceptions in a message-by-message casebook, with app-specific billing/model/version/branding policies scoped explicitly.
+- Require exact shared component geometry, whole-surface ink, conditional borders, verified directional icons, complete locale coverage, and content-shaped skeletons.
+- Define internal scroll insets, pinned header/search/tab behavior, content-sized sheets, consistent optional/busy dismissal, and drag continuation.
+- Separate reusable search UI from independent query/pagination state; preserve detail-route replacement, draft identity, loaded metadata, and keyboard closing timing.
+- Document local-first logout, authenticated session-expiry sequencing, stale-response protection, guest entry intents, and safe recording/transcription lifecycle.
+- Define canonical source-tree promotion and duplicate-owner consolidation without changing persisted, API, or brand contracts.
+- Preserve plugin identity, assets, starter prompts, install scope, and existing architecture/coding rules; declare an empty interface capabilities list for current manifest validation (no new tools or permissions).
+
 ## 0.4.4
 
 - Require Design Linking: inspect/reuse existing UI, preserve shared design defaults and tokens across screens, and link dialog/sheet layout, action styling, spacing, icon treatment, and transitions through their common owners.

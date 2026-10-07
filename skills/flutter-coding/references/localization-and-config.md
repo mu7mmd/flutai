@@ -14,6 +14,8 @@ Use the project's directional padding, alignment, arrow/text helpers, and curren
 
 Locale preferences are owned by the existing user-preferences provider and `StorageKeys`. Preserve updates to app locale, persistence, API language, and any existing server preference flow. Resolve locale-dependent fonts in the text styles layer as described in [design-tokens.md](design-tokens.md).
 
+Audit all supported catalogs and the complete language-picker list when adding copy. Keep directional arrows in a shared helper and verify their actual glyphs; retain intentionally LTR identifiers. See [design-fidelity.md](design-fidelity.md#geometry-surfaces-and-icons) for icon and brand-asset rules. A source rename must not change translated branding or persisted/API values.
+
 ## Constants, assets, and config
 
 Keep stable shared values in their specific owner, not a generic catch-all file:

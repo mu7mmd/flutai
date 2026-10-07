@@ -34,6 +34,8 @@ For a new app, establish its required tokens and shared component families from 
 
 Record actual component owners, defaults, and supported variants in project-root `documentation/` when introduced or changed, following [documentation.md](documentation.md). Verify rendered appearances against representative usages when preview/device tools are available, including relevant theme/locale/responsive states. Source or token checks alone do not prove visual consistency; report what could actually be checked.
 
+For concrete geometry, border exceptions, whole-surface ink, verified glyphs, and skeleton parity, also read [design-fidelity.md](design-fidelity.md). For viewport ownership, shared sheets, and dismissal contracts read [scroll-and-overlays.md](scroll-and-overlays.md). These rules refine Design Linking; matching token names alone is insufficient.
+
 ## Select the mode once
 
 Define complete light and dark color sets with the same semantic fields in their owning class or file. The owner's preferred shape is an abstract palette contract with separate concrete light and dark classes, such as `ThemedColors`, `LightColors`, and `DarkColors`. Use constant instances where possible. Each class contains its concrete values; its fields and getters do not branch on brightness. An existing equivalent immutable palette/theme-extension design can be retained without an unrelated migration, but do not introduce a boolean-driven palette that switches each field internally.

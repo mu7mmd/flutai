@@ -20,6 +20,8 @@ For asynchronous code, inspect whether completion, cancellation, disposal, or re
 
 For layout changes, preserve interaction bounds, text direction, localization, and responsive constraints. Use actual rendering/device checks where available and needed. Source inspection alone cannot establish visual correctness.
 
+For a redesign, verify the concrete [visual](design-fidelity.md), [scroll/overlay](scroll-and-overlays.md), and [interaction](interaction-lifecycle.md) contracts. Check intermediate states and timing (such as nonzero closing keyboard insets), not just eventual screenshots. Confirm all requested caller sites use the shared owner and preserve their independent state. A skeleton must match the loaded component's geometry.
+
 ## Keep performance proportional
 
 Avoid repeated expensive work, unnecessary requests, state updates, and obvious redundant rebuilds in affected paths. Prefer existing lazy list/pagination and localized state builders when they fit the requirement. Do not introduce caching, background isolates, debouncing, or architectural layers without a demonstrated cost or explicit requirement. State the evidence before claiming a performance improvement.
